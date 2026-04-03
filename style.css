@@ -41,3 +41,18 @@ button{
   align-items:center;
   height:100vh;
 }
+.categories{
+  display:flex;
+  gap:10px;
+  padding:10px;
+  overflow-x:auto;
+}
+
+.cat{
+  padding:10px 15px;
+  background:#9c27b0;
+  color:white;
+  border-radius:20px;
+  cursor:pointer;
+  white-space:nowrap;
+}
