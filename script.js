@@ -1,203 +1,133 @@
+// ==== PRODUCT DATA ====
+const categories = ["Kurti & Dress", "Kids & Toys", "Westernwear", "Home", "Sarees"];
 
+const products = [
+  // Kurti & Dress (15)
+  {id:101,name:"Floral Kurti",category:"Kurti & Dress",price:1200,image:"https://i.postimg.cc/N0mKxW7p/kurti1.jpg"},
+  {id:102,name:"Cotton Kurti",category:"Kurti & Dress",price:999,image:"https://i.postimg.cc/pXd0cG9r/kurti2.jpg"},
+  {id:103,name:"Embroidered Dress",category:"Kurti & Dress",price:1500,image:"https://i.postimg.cc/DyB5W1x1/kurti3.jpg"},
+  {id:104,name:"Silk Kurti",category:"Kurti & Dress",price:1800,image:"https://i.postimg.cc/4y2S0ZHW/kurti4.jpg"},
+  {id:105,name:"Printed Dress",category:"Kurti & Dress",price:1300,image:"https://i.postimg.cc/PrRG6zRZ/kurti5.jpg"},
+  {id:106,name:"A-Line Kurti",category:"Kurti & Dress",price:1100,image:"https://i.postimg.cc/ht15FmBr/kurti6.jpg"},
+  {id:107,name:"Anarkali Dress",category:"Kurti & Dress",price:2000,image:"https://i.postimg.cc/1Xr8Y5fY/kurti7.jpg"},
+  {id:108,name:"Straight Kurti",category:"Kurti & Dress",price:950,image:"https://i.postimg.cc/w3bZGss0/kurti8.jpg"},
+  {id:109,name:"Party Kurti",category:"Kurti & Dress",price:1700,image:"https://i.postimg.cc/T1LQ3Wb0/kurti9.jpg"},
+  {id:110,name:"Cotton Dress",category:"Kurti & Dress",price:1250,image:"https://i.postimg.cc/Wz7Zx5Qf/kurti10.jpg"},
+  {id:111,name:"Long Kurti",category:"Kurti & Dress",price:1400,image:"https://i.postimg.cc/Bv5m9vVY/kurti11.jpg"},
+  {id:112,name:"Chanderi Kurti",category:"Kurti & Dress",price:1900,image:"https://i.postimg.cc/fy6YbTtZ/kurti12.jpg"},
+  {id:113,name:"Linen Dress",category:"Kurti & Dress",price:1600,image:"https://i.postimg.cc/fRy0z2vY/kurti13.jpg"},
+  {id:114,name:"Rayon Kurti",category:"Kurti & Dress",price:1150,image:"https://i.postimg.cc/3xRGt6vQ/kurti14.jpg"},
+  {id:115,name:"Designer Kurti",category:"Kurti & Dress",price:2200,image:"https://i.postimg.cc/XqQ1JgqJ/kurti15.jpg"},
 
-let products = JSON.parse(localStorage.getItem("products")) || [
+  // Kids & Toys (12)
+  {id:201,name:"Toy Car Set",category:"Kids & Toys",price:500,image:"https://i.postimg.cc/B6K4hHhX/kid1.jpg"},
+  {id:202,name:"Building Blocks",category:"Kids & Toys",price:700,image:"https://i.postimg.cc/9fq7h6x0/kid2.jpg"},
+  {id:203,name:"Action Figure",category:"Kids & Toys",price:450,image:"https://i.postimg.cc/43dXgGfX/kid3.jpg"},
+  {id:204,name:"Doll Set",category:"Kids & Toys",price:550,image:"https://i.postimg.cc/NMvnXwny/kid4.jpg"},
+  {id:205,name:"Puzzle Board",category:"Kids & Toys",price:350,image:"https://i.postimg.cc/fTx7vLzH/kid5.jpg"},
+  {id:206,name:"Coloring Book",category:"Kids & Toys",price:150,image:"https://i.postimg.cc/Dz3R3FvG/kid6.jpg"},
+  {id:207,name:"Educational Toy",category:"Kids & Toys",price:800,image:"https://i.postimg.cc/bw6TQX6q/kid7.jpg"},
+  {id:208,name:"Toy Train",category:"Kids & Toys",price:900,image:"https://i.postimg.cc/4dGmV1b5/kid8.jpg"},
+  {id:209,name:"Stuffed Animal",category:"Kids & Toys",price:400,image:"https://i.postimg.cc/DfBR7j9p/kid9.jpg"},
+  {id:210,name:"Kids T-Shirt",category:"Kids & Toys",price:350,image:"https://i.postimg.cc/4xk2VwqV/kid10.jpg"},
+  {id:211,name:"Toy Drum",category:"Kids & Toys",price:600,image:"https://i.postimg.cc/zXh0QFzL/kid11.jpg"},
+  {id:212,name:"Water Gun",category:"Kids & Toys",price:250,image:"https://i.postimg.cc/6q3z8qYp/kid12.jpg"},
 
-/* ===== FASHION (15) ===== */
-{id:1,name:"Silk Saree",price:1299,cat:"fashion",img:"https://images.unsplash.com/photo-1610030469983-98e550d6193c"},
-{id:2,name:"Cotton Saree",price:899,cat:"fashion",img:"https://images.unsplash.com/photo-1593032465171-8a6b47ffcf1d"},
-{id:3,name:"Designer Kurti",price:699,cat:"fashion",img:"https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03"},
-{id:4,name:"Anarkali Dress",price:1199,cat:"fashion",img:"https://images.unsplash.com/photo-1521335629791-ce4aec67dd47"},
-{id:5,name:"Western Dress",price:999,cat:"fashion",img:"https://images.unsplash.com/photo-1509631179647-0177331693ae"},
-{id:6,name:"Men Shirt",price:599,cat:"fashion",img:"https://images.unsplash.com/photo-1520975916090-3105956dac38"},
-{id:7,name:"Casual T-Shirt",price:299,cat:"fashion",img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab"},
-{id:8,name:"Hoodie",price:899,cat:"fashion",img:"https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf"},
-{id:9,name:"Denim Jacket",price:1499,cat:"fashion",img:"https://images.unsplash.com/photo-1520975922284-9f06c2d0b9fa"},
-{id:10,name:"Track Pants",price:499,cat:"fashion",img:"https://images.unsplash.com/photo-1593032465171-8a6b47ffcf1d"},
-{id:11,name:"Formal Pants",price:799,cat:"fashion",img:"https://images.unsplash.com/photo-1541099649105-f69ad21f3246"},
-{id:12,name:"Lehenga",price:2499,cat:"fashion",img:"https://images.unsplash.com/photo-1600185365483-26d7a4cc7519"},
-{id:13,name:"Blouse",price:399,cat:"fashion",img:"https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03"},
-{id:14,name:"Palazzo Set",price:999,cat:"fashion",img:"https://images.unsplash.com/photo-1610030469983-98e550d6193c"},
-{id:15,name:"Dupatta",price:299,cat:"fashion",img:"https://images.unsplash.com/photo-1593032465171-8a6b47ffcf1d"},
+  // Westernwear (12)
+  {id:301,name:"Men T-Shirt",category:"Westernwear",price:499,image:"https://i.postimg.cc/Hx9jzXwT/west1.jpg"},
+  {id:302,name:"Jeans",category:"Westernwear",price:1200,image:"https://i.postimg.cc/Gp0ytqS2/west2.jpg"},
+  {id:303,name:"Hoodie",category:"Westernwear",price:1500,image:"https://i.postimg.cc/wvyLXzC2/west3.jpg"},
+  {id:304,name:"Jacket",category:"Westernwear",price:2000,image:"https://i.postimg.cc/T1ywW5Pr/west4.jpg"},
+  {id:305,name:"Women Top",category:"Westernwear",price:700,image:"https://i.postimg.cc/NF2Q5MZ6/west5.jpg"},
+  {id:306,name:"Leggings",category:"Westernwear",price:900,image:"https://i.postimg.cc/t42XHp5g/west6.jpg"},
+  {id:307,name:"Sneakers",category:"Westernwear",price:1800,image:"https://i.postimg.cc/1X2yLztV/west7.jpg"},
+  {id:308,name:"Shirt",category:"Westernwear",price:800,image:"https://i.postimg.cc/FsY4L3cD/west8.jpg"},
+  {id:309,name:"Skirt",category:"Westernwear",price:950,image:"https://i.postimg.cc/ZK1z5pL6/west9.jpg"},
+  {id:310,name:"Blazer",category:"Westernwear",price:2500,image:"https://i.postimg.cc/KzR0CVnV/west10.jpg"},
+  {id:311,name:"Shorts",category:"Westernwear",price:650,image:"https://i.postimg.cc/9M5BnsxM/west11.jpg"},
+  {id:312,name:"Crop Top",category:"Westernwear",price:700,image:"https://i.postimg.cc/NfH7cDhn/west12.jpg"},
 
-/* ===== FOOTWEAR (15) ===== */
-{id:16,name:"Running Shoes",price:1299,cat:"footwear",img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff"},
-{id:17,name:"Casual Sneakers",price:1499,cat:"footwear",img:"https://images.unsplash.com/photo-1528701800489-20be9c0d6f1c"},
-{id:18,name:"Formal Shoes",price:1999,cat:"footwear",img:"https://images.unsplash.com/photo-1528701800489-20be9c0d6f1c"},
-{id:19,name:"Sandals",price:499,cat:"footwear",img:"https://images.unsplash.com/photo-1582582494700-4c4b3a1fbb27"},
-{id:20,name:"Flip Flops",price:299,cat:"footwear",img:"https://images.unsplash.com/photo-1593032465171-8a6b47ffcf1d"},
-{id:21,name:"Sports Shoes",price:999,cat:"footwear",img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff"},
-{id:22,name:"Loafers",price:1199,cat:"footwear",img:"https://images.unsplash.com/photo-1528701800489-20be9c0d6f1c"},
-{id:23,name:"Boots",price:2499,cat:"footwear",img:"https://images.unsplash.com/photo-1520975922284-9f06c2d0b9fa"},
-{id:24,name:"Heels",price:899,cat:"footwear",img:"https://images.unsplash.com/photo-1528701800489-20be9c0d6f1c"},
-{id:25,name:"Kids Shoes",price:699,cat:"footwear",img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff"},
-{id:26,name:"Slippers",price:399,cat:"footwear",img:"https://images.unsplash.com/photo-1582582494700-4c4b3a1fbb27"},
-{id:27,name:"Ethnic Mojari",price:799,cat:"footwear",img:"https://images.unsplash.com/photo-1528701800489-20be9c0d6f1c"},
-{id:28,name:"Office Shoes",price:1799,cat:"footwear",img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff"},
-{id:29,name:"Canvas Shoes",price:899,cat:"footwear",img:"https://images.unsplash.com/photo-1528701800489-20be9c0d6f1c"},
-{id:30,name:"Sports Sandals",price:699,cat:"footwear",img:"https://images.unsplash.com/photo-1582582494700-4c4b3a1fbb27"},
+  // Home (10)
+  {id:401,name:"Cushion Cover",category:"Home",price:350,image:"https://i.postimg.cc/j2rCshdM/home1.jpg"},
+  {id:402,name:"Wall Clock",category:"Home",price:500,image:"https://i.postimg.cc/3xFmXJbQ/home2.jpg"},
+  {id:403,name:"Table Lamp",category:"Home",price:1200,image:"https://i.postimg.cc/VL7H0kD9/home3.jpg"},
+  {id:404,name:"Ceramic Vase",category:"Home",price:800,image:"https://i.postimg.cc/TwG9YbT9/home4.jpg"},
+  {id:405,name:"Rug Carpet",category:"Home",price:1500,image:"https://i.postimg.cc/zXyd0g1k/home5.jpg"},
+  {id:406,name:"Wall Art",category:"Home",price:1100,image:"https://i.postimg.cc/BvVhbY8Y/home6.jpg"},
+  {id:407,name:"Curtains",category:"Home",price:900,image:"https://i.postimg.cc/XJmYqzjG/home7.jpg"},
+  {id:408,name:"Table Mat",category:"Home",price:400,image:"https://i.postimg.cc/0yVjhtzV/home8.jpg"},
+  {id:409,name:"LED Light",category:"Home",price:1300,image:"https://i.postimg.cc/3J3S4jGn/home9.jpg"},
+  {id:410,name:"Storage Box",category:"Home",price:700,image:"https://i.postimg.cc/jqJwYc8X/home10.jpg"},
 
-/* ===== HOME (15) ===== */
-{id:31,name:"Wall Decor",price:699,cat:"home",img:"https://images.unsplash.com/photo-1505691938895-1758d7feb511"},
-{id:32,name:"Table Lamp",price:999,cat:"home",img:"https://images.unsplash.com/photo-1507473885765-e6ed057f782c"},
-{id:33,name:"Bedsheet",price:799,cat:"home",img:"https://images.unsplash.com/photo-1582582494700-4c4b3a1fbb27"},
-{id:34,name:"Curtains",price:899,cat:"home",img:"https://images.unsplash.com/photo-1505691938895-1758d7feb511"},
-{id:35,name:"Sofa Cover",price:1199,cat:"home",img:"https://images.unsplash.com/photo-1582582494700-4c4b3a1fbb27"},
-{id:36,name:"Wall Clock",price:499,cat:"home",img:"https://images.unsplash.com/photo-1507473885765-e6ed057f782c"},
-{id:37,name:"Cushion Set",price:699,cat:"home",img:"https://images.unsplash.com/photo-1582582494700-4c4b3a1fbb27"},
-{id:38,name:"Carpet",price:1499,cat:"home",img:"https://images.unsplash.com/photo-1505691938895-1758d7feb511"},
-{id:39,name:"Storage Box",price:599,cat:"home",img:"https://images.unsplash.com/photo-1507473885765-e6ed057f782c"},
-{id:40,name:"Dining Set",price:2499,cat:"home",img:"https://images.unsplash.com/photo-1505691938895-1758d7feb511"},
-{id:41,name:"Flower Vase",price:399,cat:"home",img:"https://images.unsplash.com/photo-1493666438817-866a91353ca9"},
-{id:42,name:"Kitchen Set",price:1299,cat:"home",img:"https://images.unsplash.com/photo-1503602642458-232111445657"},
-{id:43,name:"Wall Shelf",price:999,cat:"home",img:"https://images.unsplash.com/photo-1505691938895-1758d7feb511"},
-{id:44,name:"Night Lamp",price:799,cat:"home",img:"https://images.unsplash.com/photo-1507473885765-e6ed057f782c"},
-{id:45,name:"Decor Lights",price:499,cat:"home",img:"https://images.unsplash.com/photo-1507473885765-e6ed057f782c"},
-
-/* ===== ELECTRONICS (15) ===== */
-{id:46,name:"Smart Watch",price:1999,cat:"electronics",img:"https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b"},
-{id:47,name:"Bluetooth Speaker",price:1499,cat:"electronics",img:"https://images.unsplash.com/photo-1585386959984-a4155224a1ad"},
-{id:48,name:"Headphones",price:999,cat:"electronics",img:"https://images.unsplash.com/photo-1518444028785-8f5c4a7c87d0"},
-{id:49,name:"Gaming Mouse",price:799,cat:"electronics",img:"https://images.unsplash.com/photo-1587202372775-e229f172b9d7"},
-{id:50,name:"Keyboard",price:1299,cat:"electronics",img:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8"},
-{id:51,name:"Power Bank",price:899,cat:"electronics",img:"https://images.unsplash.com/photo-1585386959984-a4155224a1ad"},
-{id:52,name:"LED Light",price:499,cat:"electronics",img:"https://images.unsplash.com/photo-1507473885765-e6ed057f782c"},
-{id:53,name:"Mobile Stand",price:299,cat:"electronics",img:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8"},
-{id:54,name:"USB Cable",price:199,cat:"electronics",img:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8"},
-{id:55,name:"Tripod",price:699,cat:"electronics",img:"https://images.unsplash.com/photo-1585386959984-a4155224a1ad"},
-{id:56,name:"Laptop Bag",price:1199,cat:"electronics",img:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8"},
-{id:57,name:"Webcam",price:1599,cat:"electronics",img:"https://images.unsplash.com/photo-1587202372775-e229f172b9d7"},
-{id:58,name:"Smart Bulb",price:799,cat:"electronics",img:"https://images.unsplash.com/photo-1507473885765-e6ed057f782c"},
-{id:59,name:"Tablet Stand",price:499,cat:"electronics",img:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8"},
-{id:60,name:"Mini Fan USB",price:399,cat:"electronics",img:"https://images.unsplash.com/photo-1585386959984-a4155224a1ad"}
-
+  // Sarees (10)
+  {id:501,name:"Silk Saree Pink",category:"Sarees",price:2200,image:"https://i.postimg.cc/j2f8P5dT/saree1.jpg"},
+  {id:502,name:"Cotton Saree Blue",category:"Sarees",price:1800,image:"https://i.postimg.cc/Z0DcHxvn/saree2.jpg"},
+  {id:503,name:"Designer Saree Red",category:"Sarees",price:3500,image:"https://i.postimg.cc/JzKhxwns/saree3.jpg"},
+  {id:504,name:"Chiffon Saree Green",category:"Sarees",price:2000,image:"https://i.postimg.cc/ZYZT4g7r/saree4.jpg"},
+  {id:505,name:"Linen Saree Yellow",category:"Sarees",price:1500,image:"https://i.postimg.cc/wjv2X7fC/saree5.jpg"},
+  {id:506,name:"Party Saree Purple",category:"Sarees",price:3200,image:"https://i.postimg.cc/8P2s9mP6/saree6.jpg"},
+  {id:507,name:"Silk Saree Orange",category:"Sarees",price:2500,image:"https://i.postimg.cc/4dWZ7PqT/saree7.jpg"},
+  {id:508,name:"Cotton Saree White",category:"Sarees",price:1800,image:"https://i.postimg.cc/0Q7h0kYg/saree8.jpg"},
+  {id:509,name:"Designer Saree Grey",category:"Sarees",price:3000,image:"https://i.postimg.cc/Wp1gVcv0/saree9.jpg"},
+  {id:510,name:"Party Saree Maroon",category:"Sarees",price:3500,image:"https://i.postimg.cc/XqWZ3Pcs/saree10.jpg"},
 ];
-// ===== STORAGE =====
+
+// ==== FUNCTIONS ====
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
-let wishlist = JSON.parse(localStorage.getItem("wish")) || [];
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
-// ===== SHOW PRODUCTS =====
-function showProducts(){
-  let box = document.getElementById("products");
-  if(!box) return;
+function showProducts(category="All") {
+  const container = document.getElementById("products");
+  container.innerHTML = "";
 
-  box.innerHTML = products.map(p=>`
-    <div class="card">
-      <img src="${p.img}" width="100%">
-      <h4>${p.name}</h4>
-      <p>₹${p.price}</p>
-      <button onclick="view(${p.id})">View</button>
-      <button onclick="addCart(${p.id})">Cart</button>
-      <button onclick="addWish(${p.id})">❤️</button>
-    </div>
-  `).join('');
+  const filtered = category==="All" ? products : products.filter(p=>p.category===category);
+
+  filtered.forEach(p=>{
+    const wish = wishlist.includes(p.id) ? "❤️" : "🤍";
+    container.innerHTML += `
+      <div class="product-card">
+        <img src="${p.image}" alt="${p.name}">
+        <div class="wishlist" onclick="toggleWishlist(${p.id})">${wish}</div>
+        <h4>${p.name}</h4>
+        <p>₹${p.price}</p>
+        <button onclick="addToCart(${p.id})">Add to Cart</button>
+      </div>
+    `;
+  });
 }
 
-// ===== CATEGORY =====
-function openCategory(cat){
-  localStorage.setItem("selectedCategory", cat);
-  location.href = "category.html";
+// ==== WISHLIST ====
+function toggleWishlist(id){
+  if(wishlist.includes(id)){
+    wishlist = wishlist.filter(i=>i!==id);
+  } else {
+    wishlist.push(id);
+  }
+  localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  showProducts();
 }
 
-function loadCategory(){
-  let cat = localStorage.getItem("selectedCategory");
-  document.getElementById("catTitle").innerText = cat.toUpperCase();
-
-  let filtered = products.filter(p => p.cat === cat);
-
-  document.getElementById("products").innerHTML = filtered.map(p=>`
-    <div class="card">
-      <img src="${p.img}" width="100%">
-      <h4>${p.name}</h4>
-      <p>₹${p.price}</p>
-      <button onclick="view(${p.id})">View</button>
-      <button onclick="addCart(${p.id})">Cart</button>
-    </div>
-  `).join('');
-}
-
-function goBack(){ history.back(); }
-
-// ===== PRODUCT DETAIL =====
-function view(id){
-  localStorage.setItem("view", id);
-  location.href="product.html";
-}
-
-function showProductDetail(){
-  let id = localStorage.getItem("view");
-  let p = products.find(x=>x.id==id);
-
-  document.getElementById("productDetail").innerHTML = `
-    <h2>${p.name}</h2>
-    <img src="${p.img}" width="200">
-    <p>₹${p.price}</p>
-    <button onclick="addCart(${p.id})">Add to Cart</button>
-  `;
-}
-
-// ===== CART =====
-function addCart(id){
-  cart.push(id);
+// ==== CART ====
+function addToCart(id){
+  let item = products.find(p=>p.id===id);
+  let exist = cart.find(c=>c.id===id);
+  if(exist){
+    exist.qty +=1;
+  } else {
+    cart.push({...item, qty:1});
+  }
   localStorage.setItem("cart", JSON.stringify(cart));
-  alert("Added to cart 🛒");
+  updateCartCount();
+  alert("Added to Cart ✅");
 }
 
-function showCart(){
-  let box = document.getElementById("cartItems");
-  let total = 0;
-
-  box.innerHTML = cart.map(id=>{
-    let p = products.find(x=>x.id==id);
-    total += p.price;
-    return `<p>${p.name} - ₹${p.price}</p>`;
-  }).join('');
-
-  document.getElementById("total").innerText = "Total: ₹"+total;
+function updateCartCount(){
+  let count = cart.reduce((s,i)=>s+i.qty,0);
+  document.getElementById("cartCount").innerText = count;
 }
 
-// ===== ORDER =====
-function placeOrder(){
-  let method = document.getElementById("payment").value;
-  alert("Order placed via "+method);
-  localStorage.removeItem("cart");
-  location.href="index.html";
-}
-
-// ===== WISHLIST =====
-function addWish(id){
-  wishlist.push(id);
-  localStorage.setItem("wish", JSON.stringify(wishlist));
-  alert("Added to wishlist ❤️");
-}
-
-// ===== ADMIN =====
-function addProduct(){
-  let name = pname.value;
-  let price = pprice.value;
-  let img = pimg.value;
-  let cat = prompt("Enter category (fashion/footwear/home/electronics)");
-
-  products.push({id:Date.now(),name,price,img,cat});
-  localStorage.setItem("products", JSON.stringify(products));
-  loadAdmin();
-}
-
-function loadAdmin(){
-  let box = document.getElementById("adminProducts");
-
-  box.innerHTML = products.map(p=>`
-    <div>
-      ${p.name} ₹${p.price} (${p.cat})
-      <button onclick="removeProduct(${p.id})">Delete</button>
-    </div>
-  `).join('');
-}
-
-function removeProduct(id){
-  products = products.filter(p=>p.id!==id);
-  localStorage.setItem("products", JSON.stringify(products));
-  loadAdmin();
-}
-
-// ===== INIT =====
-showProducts();
+// ==== INIT ====
+document.addEventListener("DOMContentLoaded", ()=>{
+  showProducts();
+  updateCartCount();
+});
